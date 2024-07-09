@@ -117,7 +117,7 @@ const EditStudent = () => {
   return (
     <div
       className="container"
-      style={{ marginTop: "110px", marginBottom: "50px" }}
+      style={{ marginTop: "110px", marginBottom: "60px" }}
     >
       <div className="row">
         <div className="card col-md-6 offset-md-3">

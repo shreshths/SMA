@@ -22,7 +22,10 @@ const StudentList = () => {
   }, []);
 
   return (
-    <div className="container" style={{ marginTop: "60px" }}>
+    <div
+      className="container"
+      style={{ marginTop: "110px", marginBottom: "60px" }}
+    >
       <h2 className="text-center">Student List</h2>
       <table className="table table-bordered table-striped">
         <thead>
