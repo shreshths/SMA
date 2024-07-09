@@ -1,5 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
   const location = useLocation();
@@ -15,14 +17,14 @@ const Header = () => {
             Student Management App
           </a>
           {location.pathname !== "/login" && location.pathname !== "/" && (
-            <div align="right">
+            <div align="right" className="d-flex">
               <Link
                 to="/add-student"
                 className={`btn btn-dark ${
                   location.pathname === "/add-student" ? "active" : ""
                 }`}
               >
-                Add
+                Add a Student
               </Link>
               <Link
                 to="/students"
@@ -32,9 +34,17 @@ const Header = () => {
               >
                 Home
               </Link>
-
+              <div
+                className="vr ms-4 me-4"
+                style={{
+                  color: "white",
+                }}
+              ></div>
               <Link to="/login">
-                <button className="btn btn-danger ms-4">Logout</button>
+                <button className="btn btn-outline-light" title="Logout">
+                  Logout&ensp;
+                  <FontAwesomeIcon icon={faRightFromBracket} />
+                </button>
               </Link>
             </div>
           )}

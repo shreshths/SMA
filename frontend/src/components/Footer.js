@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div>
       <footer
-        className="footer bg-dark"
+        className="footer bg-black "
         style={{
           position: "fixed",
           bottom: 0,
@@ -12,8 +12,8 @@ const Footer = () => {
           textAlign: "center",
         }}
       >
-        <span className="text-light">
-          SMA &#169; 2024. All Rights Reserved.
+        <span className="fw-light small text-light opacity-50">
+          Copyright &#169; 2024 - Student Management App. All Rights Reserved.
         </span>
       </footer>
     </div>
