@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { AuthContext } from "../AuthContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRightFromBracket, faBars } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
   const location = useLocation();
+
+  const { logout } = useContext(AuthContext);
 
   return (
     <div>
@@ -59,7 +62,11 @@ const Header = () => {
                       color: "white",
                     }}
                   ></div>
-                  <Link to="/login" className="mb-2 mb-md-0 me-md-4">
+                  <Link
+                    to="/login"
+                    className="mb-2 mb-md-0 me-md-4"
+                    onClick={logout}
+                  >
                     <button className="btn btn-outline-light" title="Logout">
                       Logout&ensp;
                       <FontAwesomeIcon icon={faRightFromBracket} />

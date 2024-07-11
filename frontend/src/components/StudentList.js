@@ -30,7 +30,7 @@ const StudentList = () => {
       <table className="table table-bordered table-striped">
         <thead>
           <th>#</th>
-          <th>Roll No</th>
+          <th>R.No</th>
           <th>Name</th>
           <th>Course</th>
           <th>Actions</th>

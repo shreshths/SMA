@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useContext } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../AuthContext";
 
 const Login = () => {
   const [credentials, setCredentials] = useState({
@@ -8,7 +9,12 @@ const Login = () => {
   });
   const [error, setError] = useState("");
 
+  const location = useLocation();
   const navigate = useNavigate();
+
+  const { login } = useContext(AuthContext);
+
+  const mesage = location.state?.msg;
 
   const handleChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
@@ -24,6 +30,7 @@ const Login = () => {
     }
 
     if (email === "admin@example.com" && password === "password") {
+      login();
       navigate("/students");
     } else {
       setError("Invalid email or password");
@@ -40,6 +47,7 @@ const Login = () => {
           <h2 className="card-title">Login</h2>
         </div>
         <div className="card-body">
+          {mesage && <div className="alert alert-warning">{mesage}</div>}
           {error && <div className="alert alert-danger">{error}</div>}
           <div className="alert alert-info">
             <p>Email: admin@example.com</p>
