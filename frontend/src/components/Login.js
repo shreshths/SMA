@@ -14,7 +14,7 @@ const Login = () => {
 
   const { login } = useContext(AuthContext);
 
-  const mesage = location.state?.msg;
+  const message = location.state?.msg;
 
   const handleChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
