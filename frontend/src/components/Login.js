@@ -47,7 +47,7 @@ const Login = () => {
           <h2 className="card-title">Login</h2>
         </div>
         <div className="card-body">
-          {message && <div className="alert alert-warning">{mesage}</div>}
+          {message && <div className="alert alert-warning">{message}</div>}
           {error && <div className="alert alert-danger">{error}</div>}
           <div className="alert alert-info">
             <p>Email: admin@example.com</p>
